@@ -5,6 +5,7 @@
 #include "lib/Conversion/ArithExtToArith/ArithExtToArith.h"
 #include "lib/Conversion/BGVToOpenfhe/BGVToOpenfhe.h"
 #include "lib/Conversion/BGVToPolynomial/BGVToPolynomial.h"
+#include "lib/Conversion/CGGIToJaxite/CGGIToJaxite.h"
 #include "lib/Conversion/CGGIToTfheRust/CGGIToTfheRust.h"
 #include "lib/Conversion/CGGIToTfheRustBool/CGGIToTfheRustBool.h"
 #include "lib/Conversion/CombToCGGI/CombToCGGI.h"
@@ -554,6 +555,7 @@ int main(int argc, char **argv) {
   bgv::registerBGVToOpenfhePasses();
   comb::registerCombToCGGIPasses();
   ::mlir::heir::polynomial::registerPolynomialToStandardPasses();
+  registerCGGIToJaxitePasses();
   registerCGGIToTfheRustPasses();
   registerCGGIToTfheRustBoolPasses();
   registerSecretToBGVPasses();
